@@ -28,7 +28,14 @@ def test_run():
     symbols = ['GOOG', 'IBM', 'GLD']
 
     df = get_data(symbols, dates)
-    print(df)
+    #print(df)
+    # slice by row for 1 month
+    print(df.ix['2019-01-01':'2019-01-31'])
+    # slice by columnS symbols
+    print(df[['GOOG', 'GLD']])
+
+    # slice by row AND COLUMN
+    print(df.ix['2019-01-01':'2019-01-15', ['SPY', 'IBM']])
 
 
 if __name__ == "__main__":
